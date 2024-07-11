@@ -74,3 +74,15 @@ SELECT COUNT(order_id), MAX(freight), employee_id
     WHERE order_date IS NOT NULL
     GROUP BY employee_id
     ORDER BY employee_id;
+
+-- 9 Números de pedidos por día:
+    -- El siguiente paso en el análisis de los pedidos va a consistir en conocer mejor la distribución de los mismos según las fechas. Por lo tanto, tendremos que generar una consulta que nos saque el número de  pedidos para cada día, mostrando de manera separada el día (DAY()), el mes (MONTH()) y el año (YEAR()).
+
+SELECT COUNT(customer_id), DAY(order_date), month(order_date), year(order_date)
+    FROM orders
+    GROUP BY DAY(order_date), month(order_date), year(order_date);
+    
+-- 10 Número de pedidos por mes y año:
+    -- La consulta anterior nos muestra el número de pedidos para cada día concreto, pero esto es demasiado detalle. Genera una modificación de la consulta anterior para que agrupe los pedidos por cada mes concreto de cada año.
+    
+
